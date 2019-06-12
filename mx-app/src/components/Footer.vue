@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer v-if="isShowMfooter">
         <ul>
             <li v-for="(item,index) in footerNav" 
             :key="index"
@@ -57,6 +57,12 @@ export default Vue.extend({
               name:this.footerNav[index].name
           })
       }
+  },
+  computed:{
+    //从仓库获取值
+    isShowMfooter(){
+      return this.$store.state.isShowMfooter;
+    }
   },
 });
 </script>

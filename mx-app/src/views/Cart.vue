@@ -1,5 +1,5 @@
 <template>
-    <div>活动</div>
+    <div>购物车</div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
@@ -10,3 +10,4 @@ export default Vue.extend({
   },
 })
 </script>
+

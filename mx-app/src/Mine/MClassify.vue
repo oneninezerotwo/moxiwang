@@ -80,13 +80,20 @@ export default Vue.extend({
       }
     }
   }
+  li:nth-child(4),
+  li:nth-child(5),
+  li:nth-child(6){
+      border-bottom: solid 0.1rem #ddd;
+  }
+  li:nth-child(7){
+      border-top: none;
+  }
 
   .borRight {
     border-right: solid 0.1rem #ddd;
+     border-top: solid 0.1rem #ddd;
   }
-  .borTop {
-    border-top: solid 0.1rem #ddd;
-  }
+  
 }
 </style>
 

@@ -1,16 +1,36 @@
 <template>
     <div class="user">
 			<div class="setting">
-				<img src="http://weixin.moximoxi.net/MoxiWap/img/setting.png">
+				<img src="http://weixin.moximoxi.net/MoxiWap/img/setting.png"/>
 			</div>
 			<div class="userInfo">
-				<img src="http://weixin.moximoxi.net/MoxiWap/img/moxi.png">
+				<img src="http://weixin.moximoxi.net/MoxiWap/img/moxi.png"
+                @click="skip()"
+                />
 				<p class="userName"></p>
 				<p class="grades"></p>
 			</div>
 			<p class="give">签到送摩币</p>
 		</div>
 </template>
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+    data(){
+        return{
+            name:'login'
+        }
+    },
+    methods: {
+        skip(){
+            this.$router.push({
+                name:this.name
+            })
+        }
+    },
+})
+</script>
+
 <style lang="scss" scoped>
     .user {
     width: 90%;

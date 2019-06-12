@@ -5,6 +5,9 @@ import Classify from './views/Classify.vue'
 import Activity from './views/Activity.vue'
 import Cart from './views/Cart.vue'
 import Mine from './views/Mine.vue'
+import Login from './views/Login.vue'
+import Register from './views/Register.vue'
+import Loginn from './views/Loginn.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -35,6 +38,16 @@ export default new Router({
       path: '/mine',
       name: 'mine',
       component: Mine
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
     },
   ]
 })
