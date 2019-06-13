@@ -1,7 +1,7 @@
 <template>
     <div class="register">
         <div class="header">
-            <a class="return">
+            <a class="return"  @click="returns()" >
                 <img src="http://weixin.moximoxi.net/MoxiWap/img/return.png">
             </a>
             <p class="tit">注册</p>
@@ -25,7 +25,7 @@
             <input class="pass2" type="password" placeholder="请再次输入密码"
              @blur="psw()"  v-model="againPsw"
             >
-            <div class="errorinfo" v-text="mima" :style="{color:color}"></div>
+            <div class="errorinfo" v-text="mima" :style="{color:color1}"></div>
             <a class="login" :style="{background:isok&&isok2&&isok3?background:background1}"
               @click="jumpTerm()"
             >确认</a>
@@ -65,6 +65,7 @@ export default Vue.extend({
           pswd:'',
           againPsw:'',
           color:'',
+          color1:'',
           isok:false,
           isok1:false,
           isok2:false,
@@ -126,16 +127,16 @@ export default Vue.extend({
         }else{
           if(!/^[0-9a-zA-Z!@#$^]{6,18}$/.test(this.pswd)){
               this.mima = '密码由数字或者字母组成，长度在6-20'
-              this.color = 'red'
+              this.color1 = 'red'
                this.isok2 =false;
           }else{
             if(this.pswd==this.againPsw){
             this.mima = '密码正确'
-            this.color = '#58bc58'
+            this.color1 = '#58bc58'
             this.isok2 =true;
             }else{
             this.mima = '密码不一致'
-            this.color = 'red'
+            this.color1 = 'red'
             this.isok2 =false;
             }
           
@@ -155,11 +156,14 @@ export default Vue.extend({
       jumpTerm(){
         if(this.isok&&this.isok2&&this.isok3){
           alert('注册成功')
-          localStorage.setItem(this.aa,this.pswd)
+          localStorage.setItem('name',this.aa+','+this.pswd)
           this.$router.push('/login')
         }else{
           alert('请完善信息')
         }
+      },
+      returns(){
+        this.$router.push('/login')
       }
   },
 });

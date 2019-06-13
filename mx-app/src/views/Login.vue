@@ -1,7 +1,9 @@
 <template>
   <div class="login">
     <header>
-      <a class="return"><img src="http://weixin.moximoxi.net/MoxiWap/img/return.png"></a>
+      <a class="return" @click="returns()">
+        <img src="http://weixin.moximoxi.net/MoxiWap/img/return.png">
+        </a>
       <p class="tit">登录</p>
       <a href="../index.html"><img class="backindex" src="http://weixin.moximoxi.net/MoxiWap/img/logo.png"></a>
     </header>
@@ -50,6 +52,7 @@ export default Vue.extend({
       name: "register",
       aaa:'',
       bb:'',
+      qiege:localStorage.getItem('name')
     };
   },
   methods: {
@@ -69,16 +72,27 @@ export default Vue.extend({
       });
     },
     denglu(){
-      if(this.aaa==""||this.bb==""){
-        console.log('用户名或密码不能为空')
-      }else{
-        if(localStorage.getItem(this.aaa)==this.bb){
-        console.log("登录成功")
-      }else{
-        console.log('登录失败')
-      }
+      let dd='';
+      if(this.qiege){
+             dd = this.qiege.split(',')
       }
      
+      console.log(dd)
+      if(this.aaa==""||this.bb==""){
+        alert('账号或密码不能为空')
+      }else{
+        if(this.aaa==dd[0]&&this.bb==dd[1]){
+            alert('登录成功')
+            this.$router.push('/Mine')
+      }else{
+        alert('登录失败')
+      }
+      }
+ 
+     
+    },
+    returns(){
+      this.$router.push('/Mine')
     }
   },
   created() {
@@ -89,7 +103,6 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 @import "../assets/css/login.css";
-
 header {
   width: 100%;
   height: 4rem;

@@ -11,6 +11,7 @@ import 'iview/dist/styles/iview.css';
 
 Vue.use(iView);
 Vue.use(ElementUI);
+
 Vue.config.productionTip = false
 new Vue({
   router,

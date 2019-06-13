@@ -13,6 +13,7 @@ Vue.prototype.$axios = axios;
 
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
+import Setting from './views/Setting.vue'
 Vue.use(Router)
 Vue.use(iView);
 
@@ -54,6 +55,11 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: Register
+    },
+    {
+      path: '/setting',
+      name: 'setting',
+      component: Setting
     },
   ]
 })

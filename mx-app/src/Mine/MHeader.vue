@@ -1,32 +1,55 @@
 <template>
-  <div class="user">
-    <div class="setting">
-      <img src="http://weixin.moximoxi.net/MoxiWap/img/setting.png">
-    </div>
-    <div class="userInfo">
-      <img src="http://weixin.moximoxi.net/MoxiWap/img/moxi.png" @click="skip()">
-      <p class="userName"></p>
-      <p class="grades"></p>
-    </div>
-    <p class="give">签到送摩币</p>
-  </div>
+    <div class="user">
+			<div class="setting">
+				<img src="http://weixin.moximoxi.net/MoxiWap/img/setting.png"
+                @click="skips()"/>
+
+			</div>
+			<div class="userInfo">
+				<img src="http://weixin.moximoxi.net/MoxiWap/img/moxi.png"
+                @click="skip()"
+                />
+				<p class="userName">{{this.phone}}</p>
+				<p class="grades">{{this.title}}</p>
+			</div>
+			<p class="give">签到送摩币</p>
+		</div>
 </template>
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue'
+import { __values } from 'tslib';
 export default Vue.extend({
-  data() {
-    return {
-      name: "login"
-    };
-  },
-  methods: {
-    skip() {
-      this.$router.push({
-        name: this.name
-      });
-    }
-  }
-});
+    data(){
+        return{
+            name:'login',
+            phone:localStorage.getItem('name')?localStorage.getItem('name').split(',')[0]:'',
+            title:localStorage.getItem('name')?'注册用户':'',
+        }
+    },
+    methods: {
+        //点击切换路由
+        skip(){
+            if(this.phone){
+                this.$router.push('/Mine')
+            }else{
+                this.$router.push({
+                name:this.name
+            })
+            }  
+          
+        },
+        skips(){
+            if(this.phone){
+                this.$router.push('/Setting')
+            }else{
+                this.$router.push('/Login')
+            }
+        }
+    },
+    watch: {
+        
+    },
+})
 </script>
 
 <style lang="scss" scoped>

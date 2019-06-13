@@ -5,7 +5,7 @@
             :key="index"
             @click="cut(index)">
                 <img :src="index==NavIndex?item.url2:item.url" alt="" />
-                <span v-text="item.title"  :class="{active:index==NavIndex}"></span>
+                <span v-text="item.title" :class="{active:NavIndex===index}"></span>
             </li>
         </ul>
     </footer>
@@ -47,7 +47,7 @@ export default Vue.extend({
           url2:"http://weixin.moximoxi.net/MoxiWap/img/userCenterAct.png",
         }
       ],
-      NavIndex: 0
+      NavIndex: 0,
     };
   },
   methods:{
@@ -82,9 +82,6 @@ footer {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
-    display: flex;
-    position: fixed;
-    bottom: 0;
     background-color: white;
     border-top: solid 0.1rem #d1d1d1;
     li {
