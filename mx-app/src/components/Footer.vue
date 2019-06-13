@@ -75,7 +75,7 @@ footer {
   width: 100%;
   box-sizing: border-box;
   ul {
-    width: 90%;
+    width:100%;
     padding: 0% 5%;
     display: -webkit-box;
     display: -moz-box;

@@ -16,7 +16,7 @@ export default Vue.extend({
 
 <style lang="scss">
 html{
-  font-size: 62.5% !important;
+  // font-size: 62.5% !important;
   width: 100%;
   height: 100%;
   background:#f3f3f3;

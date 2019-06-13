@@ -1,13 +1,23 @@
 <template>
-    <div>分类</div>
+  <div class="home">
+    <Mxhead/>
+    <Mxloading/>
+    <Totop/>
+  </div>
 </template>
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
-     created() {
-    // 通知底部出现
-    this.$store.state.isShowMfooter = 1;
-  },
-})
-</script>
 
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import Mxhead from "@/components/Mxhead.vue";
+import Mxloading from "@/components/Mxloading.vue";
+import Totop from "@/components/Totop.vue";
+
+@Component({
+  components: {
+    Mxhead,
+    Mxloading,
+    Totop
+  }
+})
+export default class Home extends Vue {}
+</script>

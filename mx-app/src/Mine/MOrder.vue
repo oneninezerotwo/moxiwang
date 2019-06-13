@@ -61,7 +61,7 @@ export default Vue.extend({
     width: 100%;
     background: white;
     .myOrder {
-    width: 90%;
+    width: 100%;
     padding: 0% 5%;
     overflow: hidden;
     height: 4.0rem;
