@@ -12,7 +12,11 @@
             <div class="activityTxt">
               <div class="activityTxtLeft">
                 <p v-text="i.ActivityName"></p>
-                <p>活动时间：03.16 - 05.29</p>
+                <p v-text="
+                '活动时间'+':'+i.AcitvityBegin.slice(5,7)+'.'+i.AcitvityBegin.slice(8,10)
+                +'-'+i.AcitvityEnd.slice(5,7)+'.'+i.AcitvityEnd.slice(8,10)
+                "               
+                ></p>
               </div>
               <div activityid="255" class="activityTxtRight"><img src="../../public/img/ShareIcon.png">
                 <span>分享</span>
@@ -28,6 +32,8 @@
   </div>
 </template>
 <style scoped>
+
+
 * {
   margin: 0;
   padding: 0;
@@ -47,7 +53,7 @@
 }
 header {
   width: 100%;
-  height: 4rem;
+  height: 5rem;
   overflow: hidden;
   padding: 0.5rem 0;
   background: white;
@@ -137,7 +143,7 @@ img {
 }
 .activityTxtRight img {
   margin: 0.4rem auto 0.2rem;
-  width: 1.5rem;
+  width: 1.0rem;
   margin-left: 1.8rem;
   margin-right: 1.8rem;
 }
@@ -167,11 +173,10 @@ export default Vue.extend({
       const data = await this.$axios(
         "http://api.moximoxi.net/api/ActivityList/ActivityList?startIndex=1&endIndex=20"
       );
-      console.log(data.data.ReturnObjects.result);
-      console.log(data.data.ReturnObjects.result[0].AcitvityBegin);
+    console.log(data.data.ReturnObjects.result[0])
+      console.log(data.data.ReturnObjects.result[0].AcitvityBegin.slice(8,10));
       let acchange = data.data.ReturnObjects.result;
-      let accchange = acchange[0];
-      console.log(accchange);
+      // console.log(accchange);
 
       const activeshoplist = data.data.ReturnObjects.result;
       this.activelist = [...activeshoplist];
