@@ -2,13 +2,17 @@
   <div>
     <header>
       <p class="tit">活动</p>
-      <a href="../index.html"><img class="backindex" src="../../public/img/logo.png"></a>
+      <a href="../index.html">
+        <img class="backindex" src="../../public/img/logo.png">
+      </a>
     </header>
     <div class="activity">
       <ul class="activitylist">
         <li v-for="(i,index) in activelist" :key="index">
           <div class="activityMain">
-            <a href="###"><img class="banner" :src="i.AcitvityImageUrl"></a>
+            <a href="###">
+              <img class="banner" :src="i.AcitvityImageUrl">
+            </a>
             <div class="activityTxt">
               <div class="activityTxtLeft">
                 <p v-text="i.ActivityName"></p>
@@ -18,7 +22,8 @@
                 "               
                 ></p>
               </div>
-              <div activityid="255" class="activityTxtRight"><img src="../../public/img/ShareIcon.png">
+              <div activityid="255" class="activityTxtRight">
+                <img src="../../public/img/ShareIcon.png">
                 <span>分享</span>
               </div>
             </div>
@@ -26,9 +31,11 @@
         </li>
       </ul>
     </div>
-       <BackTop :height="100" :bottom="200">
-        <div class="top"><img src="../../public/img/goTop.png" alt=""></div>
-      </BackTop>
+    <BackTop :height="100" :bottom="80" :right="15">
+      <div class="top">
+        <img src="../../public/img/goTop.png" alt>
+      </div>
+    </BackTop>
   </div>
 </template>
 <style scoped>
@@ -38,16 +45,16 @@
   margin: 0;
   padding: 0;
 }
-.top{
-        padding: 10px;
-        /* background: rgba(0, 153, 229, .7); */
-        color: #fff;
-        text-align: center;
-        border-radius: 2px;
-        width: 6rem !important;
-        height: 6rem !important;
+.top {
+  padding: 10px;
+  /* background: rgba(0, 153, 229, .7); */
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  width: 6rem !important;
+  height: 6rem !important;
 }
-.top img{
+.top img {
   width: 100%;
   height: 100%;
 }
@@ -169,7 +176,7 @@ export default Vue.extend({
 
   methods: {
     async activeList() {
-         this.$store.state.loading +=1
+      this.$store.state.loading += 1;
       const data = await this.$axios(
         "http://api.moximoxi.net/api/ActivityList/ActivityList?startIndex=1&endIndex=20"
       );
@@ -180,7 +187,7 @@ export default Vue.extend({
 
       const activeshoplist = data.data.ReturnObjects.result;
       this.activelist = [...activeshoplist];
-       this.$store.state.loading -=1
+      this.$store.state.loading -= 1;
     }
   }
 });

@@ -63,45 +63,45 @@ export default Vue.extend({
     width: 100%;
     overflow: hidden;
     img {
-    width: 1.6rem;
-    float: right;
-}
-}
-.userInfo {
+      width: 1.6rem;
+      float: right;
+    }
+  }
+  .userInfo {
     margin: 10% 0 0;
     text-align: center;
     img {
-    width: 7rem;
-    height: 7rem;
-    border: white solid 0.1rem;
-    border-radius: 50%;
-    padding: 1%;
-}
-p {
-    width: 100%;
-    text-align: center;
-    color: white;
-}
-.userName {
-    font-size: 1.2rem;
-    line-height: 2.4rem;
-}
-.grades {
-    font-size: 1.0rem;
-}
-}
-.give {
+      width: 7rem;
+      height: 7rem;
+      border: white solid 0.1rem;
+      border-radius: 50%;
+      padding: 1%;
+    }
+    p {
+      width: 100%;
+      text-align: center;
+      color: white;
+    }
+    .userName {
+      font-size: 1.2rem;
+      line-height: 2.4rem;
+    }
+    .grades {
+      font-size: 1rem;
+    }
+  }
+  .give {
     color: white;
     padding: 2% 5%;
     display: inline-block;
-    background: #FF3333;
-    border-top-right-radius: 2.0rem;
-    border-bottom-right-radius: 2.0rem;
+    background: #ff3333;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
     position: absolute;
     left: 0;
-    bottom: 3.0rem;
+    bottom: 3rem;
     font-size: 0.9rem;
-}
+  }
 }
 </style>
 
