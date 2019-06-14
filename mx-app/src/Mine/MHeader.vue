@@ -54,7 +54,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
     .user {
-    width: 90%;
+    width: 100%;
     padding: 5%;
     background: url(http://weixin.moximoxi.net/MoxiWap/img/bg-tu.png) 0 0 no-repeat;
     background-size: 100% 100%;

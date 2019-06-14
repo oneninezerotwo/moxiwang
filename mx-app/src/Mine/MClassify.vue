@@ -59,7 +59,7 @@ export default Vue.extend({
   overflow: hidden;
   background: white;
   li {
-    width: 33%;
+    width: 33.3%;
     display: inline-block;
     text-align: center;
     padding: 10% 0;

@@ -61,7 +61,7 @@ export default Vue.extend({
     width: 100%;
     background: white;
     .myOrder {
-    width: 90%;
+    width: 100%;
     padding: 0% 5%;
     overflow: hidden;
     height: 4.0rem;
@@ -95,7 +95,7 @@ a.all {
 }
 }
 .moreOrder {
-    width: 90%;
+    width: 100%;
     padding: 2% 5%;
     margin-bottom: 1.0rem;
     display: -webkit-flex;

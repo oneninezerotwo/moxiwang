@@ -1,13 +1,15 @@
 <template>
     <div class="cart">
-      <!-- <Header/>
-      <Main/> -->
+       <Header/>
+      <Main/>
+       <Count/>
     </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 import Header from '@/components/CartHeader.vue'
 import Main from '@/components/CartMain.vue'
+import Count from '@/components/CartCount.vue'
 export default Vue.extend({
      created() {
     // 通知底部出现
@@ -15,17 +17,13 @@ export default Vue.extend({
   },
   components:{
     Header,
-    Main
+    Main,
+    Count
   }
 })
 </script>
 <style lang="scss" scoped>
-@import '../assets/css/cart.css';
-  .cart{
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
+
 </style>
 
 

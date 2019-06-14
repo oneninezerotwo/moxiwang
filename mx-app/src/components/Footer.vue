@@ -4,7 +4,7 @@
             <li v-for="(item,index) in footerNav" 
             :key="index"
             @click="cut(index)">
-                <img :src="index==NavIndex?item.url2:item.url" alt="" />
+                <img :src="aa == item.name?item.url2:item.url" alt="" />
                 <span v-text="item.title" :class="{active:NavIndex===index}"></span>
             </li>
         </ul>
@@ -18,7 +18,7 @@ export default Vue.extend({
       footerNav: [
         {
           title: "首页",
-          name: "home",
+          name: "recommend",
           url: "http://weixin.moximoxi.net/MoxiWap/img/index.png",
           url2:"http://weixin.moximoxi.net/MoxiWap/img/indexAct.png"
         },
@@ -47,17 +47,24 @@ export default Vue.extend({
           url2:"http://weixin.moximoxi.net/MoxiWap/img/userCenterAct.png",
         }
       ],
-      NavIndex: 0,
+      NavIndex: this,
+      aa:this.$route.fullPath.slice(1),
     };
+  },
+  mounted(){
+
   },
   methods:{
       cut(index){
-          this.NavIndex=index;
+          // this.NavIndex=index;
+          this.aa = this.footerNav[index].name
           this.$router.push({
               name:this.footerNav[index].name
           })
+          // console.log(this.NavIndex)
       }
   },
+ 
   computed:{
     //从仓库获取值
     isShowMfooter(){
@@ -75,7 +82,7 @@ footer {
   width: 100%;
   box-sizing: border-box;
   ul {
-    width: 90%;
+    width: 100%;
     padding: 0% 5%;
     display: -webkit-box;
     display: -moz-box;

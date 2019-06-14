@@ -7,7 +7,7 @@
 <style lang="scss" scoped>
     header {
     width: 100%;
-    height: 4.0rem;
+    height: 5.2rem;
     overflow: hidden;
     padding: 0.5rem 0;
     background: white;

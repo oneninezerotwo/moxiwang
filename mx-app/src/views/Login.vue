@@ -105,7 +105,7 @@ export default Vue.extend({
 @import "../assets/css/login.css";
 header {
   width: 100%;
-  height: 4rem;
+  height: 5.2rem;
   overflow: hidden;
   padding: 0.5rem 0;
   background-size: 100%;

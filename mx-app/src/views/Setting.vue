@@ -50,7 +50,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .head {
   width: 100%;
-  height: 4rem;
+  height: 5.2rem;
   overflow: hidden;
   padding: 0.5rem 0;
   background-size: 100%;
@@ -69,7 +69,7 @@ export default Vue.extend({
   }
   p {
     float: left;
-    width: 80%;
+    width: 90%;
     height: 4rem;
     line-height: 4rem;
     text-align: center;
@@ -82,7 +82,7 @@ export default Vue.extend({
 }
 .setting a {
   display: block;
-  width: 90%;
+  width: 100%;
   padding: 3% 5%;
   background: white url(http://weixin.moximoxi.net/MoxiWap/img/more.png) 95% center no-repeat;
   background-size: 0.7rem;
