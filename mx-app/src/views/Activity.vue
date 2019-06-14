@@ -163,6 +163,7 @@ export default Vue.extend({
 
   methods: {
     async activeList() {
+         this.$store.state.loading +=1
       const data = await this.$axios(
         "http://api.moximoxi.net/api/ActivityList/ActivityList?startIndex=1&endIndex=20"
       );
@@ -174,6 +175,7 @@ export default Vue.extend({
 
       const activeshoplist = data.data.ReturnObjects.result;
       this.activelist = [...activeshoplist];
+       this.$store.state.loading -=1
     }
   }
 });
