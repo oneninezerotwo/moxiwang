@@ -20,7 +20,7 @@ export default {
 .shuaxin{
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 60%;
     transform: translateX(-50%)
   }
 </style>
