@@ -95,7 +95,7 @@ a.all {
 }
 }
 .moreOrder {
-    width: 90%;
+    width: 100%;
     padding: 2% 5%;
     margin-bottom: 1.0rem;
     display: -webkit-flex;

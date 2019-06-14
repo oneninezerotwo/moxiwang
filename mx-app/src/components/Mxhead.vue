@@ -4,7 +4,7 @@
       <p>
         <img onclick="location.href='../index.html'" src="../img/logo.png">
       </p>
-      <a href="###" style="text-decoration:none">搜索你感兴趣的内容</a>
+      <router-link to="/search" style="text-decoration:none"></router-link>
       <p></p>
     </div>
     <div class="classifyHead">
@@ -24,7 +24,6 @@
             </div>
           </a>
           <div class="classifyTxt" ref="elememt">
-            <!-- :id="nowindex==index2 ?'show':'hide'" -->
             <a
               href="javascript:;"
               v-for="(goods,gindex) in item.ThirdJsons"
@@ -59,13 +58,7 @@
         </li>
       </ul>
     </div>
-
-    <BackTop :height="100" :bottom="200">
-      <div class="top">返回顶端</div>
-    </BackTop>
-
   </div>
-
 </template>
 
 <script lang="ts">
@@ -76,7 +69,8 @@ export default Vue.extend({
     return {
       index: 0,
       result: [],
-      brand: []
+      brand: [],
+      isOver: true
     };
   },
   created() {
@@ -105,25 +99,20 @@ export default Vue.extend({
       let dom = this.$refs.elememt[index];
       dom.classList.toggle("show");
       let span = ev.target;
-
       span.innerHTML = (span.isok = !span.isok)
         ? "点击收起"
         : "点击加载更多分类";
-
-      // span.isok = !span.isok;
-      // if (span.isok) {
-      //   span.innerHTML = "点击收起";
-      // } else {
-      //   span.innerHTML = "点击加载更多分类";
-      // }
     },
+
     goto(id) {
       this.$router.push({
-        // name: "Goods",
-        // params: { id }
+        //路由传参
         path: "/goods/" + id,
         query: { id }
       });
+    },
+    searchchange() {
+      this.$store.state.searching = true;
     }
   }
 });
@@ -131,14 +120,15 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .head {
-  // z-index: 999;
-  // position: fixed;
-  // background: white;
   width: 100%;
   .search {
     padding: 0.16rem 0;
     display: flex;
     border-bottom: solid 0.0625rem /* 1/16 */ #ccc;
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    z-index: 10000;
     p {
       flex: 1;
       height: 2.8rem /* 32/16 */;
@@ -149,9 +139,9 @@ export default Vue.extend({
     }
     a {
       flex: 6;
-      height: 2.2rem;
-      line-height: 2.2rem;
-      font-size: 1rem;
+      height: 2.8rem;
+      line-height: 2.8rem;
+      font-size: 1.6rem;
       padding-left: 3.2rem;
       border: solid 1px #666;
       border-radius: 2rem;
@@ -164,6 +154,12 @@ export default Vue.extend({
   }
 
   .classifyHead {
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    z-index: 10000;
+    top: 57px;
+
     .inClassify {
       width: 100%;
       height: 2.375rem /* 38/16 */;
@@ -175,7 +171,7 @@ export default Vue.extend({
       width: 46.5%;
       line-height: 2.375rem;
       text-align: center;
-      font-size: 1rem;
+      font-size: 1.4rem;
       flex: auto;
     }
 
@@ -187,7 +183,6 @@ export default Vue.extend({
   }
   .inClassifyCon {
     overflow-y: auto;
-    height: 37.5rem /* 600/16 */;
     position: relative;
     .inClassifyList {
       width: 100%;
@@ -206,7 +201,7 @@ export default Vue.extend({
           background: rgba(0, 0, 0, 0.6);
           line-height: 6.25rem;
           p {
-            font-size: 1rem /* 20/16 */;
+            font-size: 1.6rem;
           }
         }
         .classifyBg {
@@ -215,50 +210,48 @@ export default Vue.extend({
       }
       .classifyTxt {
         padding: 0 5%;
-        font-size: 0.24rem;
-        height: 4.2rem /* 75/16 */;
+        height: 6.2rem;
         overflow: hidden;
         &.show {
           height: auto;
           // height: 6rem;
           overflow: visible;
+          &.hide {
+          }
         }
 
         a {
           display: inline-block;
           text-align: left;
-          margin: 0.3em 1rem 0.2rem 0;
+          margin: 0.6rem 1rem 0.2rem 0;
           color: #333333;
-          font-size: 0.9rem;
+          font-size: 1.4rem;
         }
       }
       .classifyMore {
-        height: 2rem;
-        line-height: 2rem;
         text-align: center;
-        font-size: 0.9rem;
+        font-size: 1.4rem;
         color: #ff3333;
-        padding: 0.2rem;
+        padding: 1.2rem;
       }
     }
   }
   .inClassifyBrandList {
     overflow-y: auto;
-    height: 37.5rem /* 600/16 */;
     .classifyBrandTit {
       width: 100%;
-      height: 6.25rem /* 100/16 */;
+      height: 8.25rem /* 100/16 */;
       img {
         border-bottom: solid 1rem #ddd;
         width: 100%;
-        height: 6.25rem /* 100/16 */;
+        height: 8.25rem /* 100/16 */;
       }
     }
 
     h2 {
       height: 3.6rem;
       line-height: 3.6rem;
-      font-size: 1rem;
+      font-size: 1.6rem;
       font-weight: normal;
       text-align: center;
     }
@@ -272,6 +265,7 @@ export default Vue.extend({
           color: white;
           padding: 1% 3%;
           margin: 3% 1%;
+          font-size: 15px;
         }
       }
       dd {
@@ -283,13 +277,14 @@ export default Vue.extend({
         }
       }
     }
-  }   .top{
-        padding: 10px;
-        background: rgba(0, 153, 229, .7);
-        color: #fff;
-        text-align: center;
-        border-radius: 2px;
-    }
+  }
+  .top {
+    padding: 10px;
+    background: rgba(0, 153, 229, 0.7);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+  }
 }
 </style>
 

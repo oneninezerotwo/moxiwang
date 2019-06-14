@@ -107,12 +107,13 @@ export default Vue.extend({
              let time = 10;
             let timer = setInterval(()=>{     
               this.title = '倒计时'+time;
-              this.isok1 =false;
+              this.isok1 =true;
                time--;
               if(time==0){
                 clearInterval(timer);
                 this.title = '请填写验证'
                  this.yzm =parseInt(Math.random()*9000+1000);
+                  this.isok1 =false;
               }
           },1000)
           
@@ -178,7 +179,7 @@ a{
   height: 100%;
   .header {
     width: 100%;
-    height: 4rem;
+    height: 5.2rem;
     overflow: hidden;
     padding: 0.5rem 0;
     background-size: 100%;
@@ -206,12 +207,12 @@ a{
     }
   }
   .content {
-    width: 90%;
+    width: 100%;
     padding: 5%;
     margin-top: 0.533333rem;
     input.num {
       display: block;
-      width: 94%;
+      width: 100%;
       /* margin-bottom: 5%; */
       border: solid 0.1rem #cdcdcd;
       padding: 5% 3%;
@@ -236,7 +237,7 @@ a{
       }
       .validCode {
         position: absolute;
-        height: 3.8rem;
+        height: 4.2rem;
         left: 0;
         color: #999;
         font-size: 1.2rem;
@@ -257,7 +258,7 @@ a{
     }
     input[type="password"] {
       display: block;
-      width: 94%;
+      width: 100%;
       /* margin-bottom: 5%; */
       border: solid 0.1rem #cdcdcd;
       padding: 5% 3%;
@@ -266,7 +267,7 @@ a{
     }
     a.login {
       display: block;
-      width: 94%;
+      width: 100%;
       background: #999;
       padding: 4.5% 3%;
       color: #fff;

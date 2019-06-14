@@ -1,5 +1,5 @@
 <template>
-  <div class="shuaxin1" :style="{opacity:loading?1:0,display:loading?'block':'none'}">
+  <div class="shuaxin" :style="{opacity:loading?1:0,display:loading?'block':'none'}">
     <img src="../img/shuaxin.gif">
   </div>
 </template>
@@ -16,7 +16,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.shuaxin1 {
+.shuaxin {
   width: 10rem;
   height: 4rem;
   position: absolute;
