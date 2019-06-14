@@ -1,13 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+
+import recommend from './components/Recommend.vue'
+import cgoods from './components/Cgoods.vue'
+import hgoods from './components/Hgoods.vue'
+import jgoods from './components/Jgoods.vue'
+import bonded from './components/Bonded.vue'
+
 import Classify from './views/Classify.vue'
 import Activity from './views/Activity.vue'
 import Cart from './views/Cart.vue'
 import Mine from './views/Mine.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
-import Loginn from './views/Loginn.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -17,7 +23,21 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      redirect:'/recommend',
+      children:[
+        {path:'recommend', component:recommend ,name:'recommend'},
+        {path:'cgoods', component:cgoods ,name:'cgoods'},
+        {path:'hgoods', component:hgoods ,name:'hgoods',  
+      //    redirect:'/hgoodsone',
+      //  children:[
+      //   {path:'hgoodsone', component:hgoodsone,name:'hgoodsone'},
+      //   {path:'hgoodstwo', component:hgoodstwo,name:'hgoodstwo'}
+      //  ]
+      },
+        {path:'jgoods', component:jgoods ,name:'jgoods'},
+        {path:'bonded', component:bonded ,name:'bonded'},
+      ]
     },
     {
       path: '/classify',
@@ -49,5 +69,7 @@ export default new Router({
       name: 'register',
       component: Register
     },
+    
+    
   ]
 })

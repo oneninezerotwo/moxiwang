@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+     <loading/>
+    <Search/>
     <router-view/>
     <Footer/>
   </div>
@@ -7,9 +9,13 @@
 <script lang="ts">
 import Vue from 'vue'
 import Footer from '@/components/Footer.vue';
+import Loading from '@/components/Loading';
+import Search from '@/components/Search'
 export default Vue.extend({
   components: {
     Footer,
+    Loading,
+    Search 
   },
 })
 </script>
@@ -20,5 +26,6 @@ html{
   width: 100%;
   height: 100%;
   background:#f3f3f3;
+  
 }
 </style>
