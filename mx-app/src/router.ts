@@ -7,6 +7,8 @@ import Cart from './views/Cart.vue'
 import Mine from './views/Mine.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
+import Goods from './views/Goods.vue'
+
 import Loginn from './views/Loginn.vue'
 import axios from 'axios'
 Vue.prototype.$axios = axios;
@@ -60,6 +62,10 @@ export default new Router({
       path: '/setting',
       name: 'setting',
       component: Setting
+    }, {
+      path: '/goods/:id',
+      name: 'Goods',
+      component: Goods
     },
   ]
 })

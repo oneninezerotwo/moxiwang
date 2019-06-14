@@ -1,3 +1,12 @@
+
+<template>
+  <BackTop :height="100" :bottom="200">
+    <div class="top">返回顶端</div>
+  </BackTop>
+</template>
+<script>
+export default {};
+</script>
 <style scoped>
 .top {
   padding: 10px;
@@ -7,11 +16,3 @@
   background: black;
 }
 </style>
-<template>
-  <BackTop :height="100" :bottom="200">
-    <div class="top">返回顶端</div>
-  </BackTop>
-</template>
-<script>
-export default {};
-</script>

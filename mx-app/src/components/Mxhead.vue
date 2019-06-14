@@ -30,6 +30,7 @@
               v-for="(goods,gindex) in item.ThirdJsons"
               :key="gindex"
               v-text="goods.proClassName"
+              @click="goto(goods.proClassID)"
             ></a>
           </div>
           <div class="classifyMore" @click="showTag(index2, $event)">
@@ -58,8 +59,15 @@
         </li>
       </ul>
     </div>
+
+    <BackTop :height="100" :bottom="200">
+      <div class="top">返回顶端</div>
+    </BackTop>
+
   </div>
+
 </template>
+
 <script lang="ts">
 import Vue from "vue";
 
@@ -108,6 +116,14 @@ export default Vue.extend({
       // } else {
       //   span.innerHTML = "点击加载更多分类";
       // }
+    },
+    goto(id) {
+      this.$router.push({
+        // name: "Goods",
+        // params: { id }
+        path: "/goods/" + id,
+        query: { id }
+      });
     }
   }
 });
@@ -267,7 +283,13 @@ export default Vue.extend({
         }
       }
     }
-  }
+  }   .top{
+        padding: 10px;
+        background: rgba(0, 153, 229, .7);
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+    }
 }
 </style>
 
