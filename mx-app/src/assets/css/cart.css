@@ -178,8 +178,8 @@
 					float: left;
 				}
 				.on_check {
-					background: url(http://weixin.moximoxi.net/MoxiWap/img/input_on.png) 0 0 no-repeat;
-					background-size: 100%;
+					background: url(http://weixin.moximoxi.net/MoxiWap/img/input_on.png) 0 0 no-repeat !important;
+					background-size: 100% !important;
 				}
 				
 				.checkClass {

@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     isShowMfooter: true,
     loading: 0,
-    searching: false
+    searching: false,
+    istrue:false,
   },
   mutations: {
 
