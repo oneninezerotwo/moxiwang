@@ -7,6 +7,7 @@ import cgoods from './components/Cgoods.vue'
 import hgoods from './components/Hgoods.vue'
 import jgoods from './components/Jgoods.vue'
 import bonded from './components/Bonded.vue'
+import details from './components/Details.vue'
 
 import Classify from './views/Classify.vue'
 import Activity from './views/Activity.vue'
@@ -25,6 +26,8 @@ import 'iview/dist/styles/iview.css';
 import Setting from './views/Setting.vue'
 Vue.use(Router)
 Vue.use(iView);
+
+
 
 export default new Router({
   mode: 'history',
@@ -84,6 +87,7 @@ export default new Router({
       name: 'Goods',
       component: Goods
     },
+    { path: '/details', component: details, name: 'details' },
 
   ]
 })

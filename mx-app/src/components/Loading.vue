@@ -25,12 +25,7 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
-<<<<<<< HEAD
   /* transform: translateX(%); */
-}
-=======
-  transform: translate(-50%, -50%);
-} */
->>>>>>> 8dbb472d13b97b6570fc083762f5304921ec053f
+
 </style>
 

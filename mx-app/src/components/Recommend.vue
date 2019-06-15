@@ -42,7 +42,9 @@
         <div class="middlepic"><img src="../assets/middlepic.jpg" alt=""></div>
         <div class="commodity">
             <ul class="inCommodity">
-                <li v-for="(i,index) in moxishop" :key="index" productid="i.ProductId" class="inCommodityList">
+                <li v-for="(i,index) in moxishop" :key="index" productid="i.ProductId" class="inCommodityList"
+                @click="details(i.ProductId,i.ProImg)"
+                >
                     <a href="###"><img :src = i.ProImg>
                     <p class="CommodityState">
                         <span class="CommodityLabel" v-text="i.ProductFrom"></span>
@@ -75,8 +77,8 @@ export default {
   },
 
   methods:{
-      
       async shopList(){
+        //    this.$store.state.footerchange = true;
         this.$store.state.loading +=1
           const data = await this.$axios(
               "https://www.easy-mock.com/mock/5cff632478b24c0691f353a6/moxishoplist/moxishop"
@@ -86,6 +88,12 @@ export default {
         // console.log(shoplist);
        this.moxishop = [...shoplist]
         this.$store.state.loading -=1
+      },
+      details(goodId,ProImg){
+        //   alert(123)
+          let id = goodId;
+          let img = ProImg
+          this.$router.push({name:'details',params:{id,img}})
       }
   }
 
@@ -93,6 +101,7 @@ export default {
 };
 </script>
 <style scoped>
+
 
 .ivu-carousel {
   width: 100%;
@@ -156,6 +165,12 @@ a {
     color: #333;
     
 }
+.inCommodity li:nth-last-child(1){
+    margin-bottom: 6rem;
+}
+.inCommodity li:nth-last-child(2){
+    margin-bottom: 6rem;
+}
 .commodity .inCommodity {
     width: 100%;
 }
@@ -163,6 +178,7 @@ a {
 ul li {
     list-style: none;
 }
+
 .commodity .inCommodity li {
     width: 50%;
     padding: 3% 0;
