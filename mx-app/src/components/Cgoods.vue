@@ -10,7 +10,9 @@
 
         <div class="commodity">
             <ul class="inCommodity">
-                <li v-for="(i,index) in cgoodsshop" :key="index" productid="i.id" class="inCommodityList">
+                <li v-for="(i,index) in cgoodsshop" :key="index" productid="i.id" class="inCommodityList"
+                    @click="details(i.ProductId,i.ProImg)"
+                >
                     <a href="###"><img :src= i.ProImg>
                         <p class="CommodityState">
                             <span class="CommodityLabel" v-text="i.ProductFrom"></span>&nbsp;
@@ -52,7 +54,13 @@ export default {
       console.log(data.data);
       this.cgoodsshop = [...cjoodsshoplist];
       this.$store.state.loading -= 1;
-    }
+    },
+      details(goodId,ProImg){
+        //   alert(123)
+          let id = goodId;
+          let img = ProImg
+          this.$router.push({name:'details',params:{id,img}})
+      }
   }
 };
 </script>
