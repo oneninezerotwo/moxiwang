@@ -111,7 +111,7 @@ export default {
 }
 .sign .inSign p {
   width: 19%;
-  margin: 0 2%;
+  margin: 5px 3%;
   display: inline-block;
 }
 .inSign {

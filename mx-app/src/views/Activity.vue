@@ -1,11 +1,12 @@
 <template>
   <div>
-    <header>
+    <div class="LzHeader">
       <p class="tit">活动</p>
       <a href="../index.html">
         <img class="backindex" src="../../public/img/logo.png">
       </a>
-    </header>
+    </div>
+
     <div class="activity">
       <ul class="activitylist">
         <li v-for="(i,index) in activelist" :key="index">
@@ -39,6 +40,10 @@
   </div>
 </template>
 <style scoped>
+/* html{
+  width: 90% !important;
+  height: 90% !important;
+} */
 
 
 * {
@@ -58,7 +63,7 @@
   width: 100%;
   height: 100%;
 }
-header {
+.LzHeader {
   width: 100%;
   height: 5rem;
   overflow: hidden;
@@ -69,7 +74,7 @@ header {
   top: 0;
   z-index: 999;
 }
-header p {
+.LzHeader p {
   float: left;
   display: inline-block;
   width: 100%;
@@ -79,6 +84,10 @@ header p {
   color: #333;
   font-size: 1.4rem;
 }
+.activityMain {
+  width: 98% !important;
+  height: 98% !important;
+}
 a {
   text-decoration: none;
   color: #1f2022;
@@ -87,6 +96,7 @@ a {
 }
 .activity {
   margin-top: 5.1rem;
+  margin-bottom: 12rem;
 }
 ul li {
   list-style: none;

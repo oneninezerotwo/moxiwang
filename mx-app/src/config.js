@@ -1,8 +1,8 @@
 dev: {
     proxyTable: {
-        '/api':{
-            target: 'http://127.0.0.1:3000/api/',
-            changeOrigin:true,
+        '/api': {
+            target: 'http://localhost:8080',
+            changeOrigin: true,
             pathRewrite: {
                 '^/api': ''
             }
