@@ -8,7 +8,9 @@
                     </span>
                     <span class="profrom">中国现货</span>
                 </div>
-                <div class="btn">编辑</div>
+                <div class="btn"
+                @click="cartQh()" v-text="aa==true?'完成':'编辑'"
+                ></div>
             </div>
         </div>
         <div>
@@ -20,19 +22,19 @@
                         <div class="listOne">
                             <input class="checkClass" name="subBox1" type="checkbox">
                         </div>
-                        <a href="details.html#productid=65286">
+                        <a href="###">
                             <div class="inShoppingCartCont">
                                 <img :src="item.proImg">
                                 <div class="inShoppingCartTxt">
-                                    <p class="tit" style="display: block;">{{item.proName}}</p>
-                                    <div class="edit" style="display: none;">
+                                    <p class="tit" v-show="!aa">{{item.proName}}</p>
+                                    <div class="edit" v-show="aa">
                                         <button class="cut">-</button>
                                         <input class="num" type="text">
                                         <button class="add">+</button>
                                     </div>
                                     <p>
                                         <span class="free">包邮</span>
-                                        <span class="number" style="display: block;">X
+                                        <span class="number" v-show="!aa">X
                                             <label>{{item.proCount}}</label>
                                         </span>
                                     </p>
@@ -44,7 +46,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="close" style="display: none;">
+                    <div class="close" v-show="aa">
                         删除
                     </div>
                 </div>
@@ -57,8 +59,20 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      cartList: []
+      cartList: [],
+      aa:0,
+      img:'http://weixin.moximoxi.net/MoxiWap/img/input_on.png',
+      img2:'http://weixin.moximoxi.net/MoxiWap/img/input.png'
     };
+  },
+  methods: {
+      cartQh(){
+          if(this.aa==0){
+              this.aa++;
+          }else{
+              this.aa--;
+          }
+      }
   },
   async created() {
     this.$store.state.loading += 1;

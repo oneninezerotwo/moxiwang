@@ -229,12 +229,11 @@
 					width: 13%;
 					background: #FF3333;
 					position: absolute;
-					right: 2rem;
+					right: 0;
 					z-index: 15;
 					color: white;
 					text-align: center;
 					line-height: 8.0rem;
-					display: none;
 				}
 				
 				.inShoppingCart .inShoppingCartCont {
@@ -272,7 +271,6 @@
 				/*编辑购物车*/
 				.inShoppingCartTxt .edit{
 					overflow: hidden;
-					display: none;
 				}
 				.inShoppingCartTxt .edit button{
 					width: 3rem;

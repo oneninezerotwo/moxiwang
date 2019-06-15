@@ -14,8 +14,17 @@ import Cart from './views/Cart.vue'
 import Mine from './views/Mine.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
+import Goods from './views/Goods.vue'
+
+import Loginn from './views/Loginn.vue'
+import axios from 'axios'
+Vue.prototype.$axios = axios;
+
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
 import Setting from './views/Setting.vue'
 Vue.use(Router)
+Vue.use(iView);
 
 export default new Router({
   mode: 'history',
@@ -25,14 +34,15 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
-      redirect:'/recommend',
-      children:[
-        {path:'recommend', component:recommend ,name:'recommend'},
-        {path:'cgoods', component:cgoods ,name:'cgoods'},
-        {path:'hgoods', component:hgoods ,name:'hgoods',  
-      },
-        {path:'jgoods', component:jgoods ,name:'jgoods'},
-        {path:'bonded', component:bonded ,name:'bonded'},
+      redirect: '/recommend',
+      children: [
+        { path: 'recommend', component: recommend, name: 'recommend' },
+        { path: 'cgoods', component: cgoods, name: 'cgoods' },
+        {
+          path: 'hgoods', component: hgoods, name: 'hgoods',
+        },
+        { path: 'jgoods', component: jgoods, name: 'jgoods' },
+        { path: 'bonded', component: bonded, name: 'bonded' },
       ]
     },
     {
@@ -69,6 +79,10 @@ export default new Router({
       path: '/setting',
       name: 'setting',
       component: Setting
+    }, {
+      path: '/goods/:id',
+      name: 'Goods',
+      component: Goods
     },
 
   ]

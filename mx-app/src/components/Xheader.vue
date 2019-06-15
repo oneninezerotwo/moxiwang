@@ -60,7 +60,7 @@ header a {
   display: inline-block;
   height: 2.6rem;
   line-height: 2.6rem;
-  width: 60%;
+  width: 70%;
   font-size: 1.2rem;
   padding-left: 3.2rem;
   border: solid 1px #666;

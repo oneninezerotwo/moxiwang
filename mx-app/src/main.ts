@@ -3,14 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './assets/css/reset.css'
-
-import axios from 'axios'
-import iView from 'iview'
+import iView from 'iview';
 import 'iview/dist/styles/iview.css';
-
+import axios from 'axios'
 Vue.use(iView);
-Vue.prototype.$axios = axios;
-// Vue.use(ElementUI);
+Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 new Vue({
   router,
