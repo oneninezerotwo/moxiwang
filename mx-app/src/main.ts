@@ -8,6 +8,11 @@ import 'iview/dist/styles/iview.css';
 import axios from 'axios'
 Vue.use(iView);
 Vue.prototype.$axios = axios
+
+Vue.prototype.backBefor = () => {
+  window.history.go(-1)
+}
+// Vue.use(ElementUI);
 Vue.config.productionTip = false
 new Vue({
   router,
