@@ -77,7 +77,7 @@ export default new Router({
       name: 'setting',
       component: Setting
     }, {
-      path: '/goods/:id',
+      path: '/goods',
       name: 'Goods',
       component: Goods
     },

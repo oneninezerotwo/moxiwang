@@ -4,7 +4,7 @@
       <p>
         <img onclick="location.href='../index.html'" src="../img/logo.png">
       </p>
-      <router-link to="/search" style="text-decoration:none"></router-link>
+      <a href style="text-decoration:none"></a>
       <p></p>
     </div>
     <div class="classifyHead">
@@ -23,16 +23,20 @@
               <p>-{{item.proClassName}}-</p>
             </div>
           </a>
-          <div class="classifyTxt" ref="elememt">
+          <div
+            class="classifyTxt"
+            ref="elememt"
+            :class="{'show':isOver ?showHeight===index2: isOver}"
+          >
             <a
               href="javascript:;"
               v-for="(goods,gindex) in item.ThirdJsons"
               :key="gindex"
               v-text="goods.proClassName"
-              @click="goto(goods.proClassID)"
+              @click="goto(goods.proClassName)"
             ></a>
           </div>
-          <div class="classifyMore" @click="showTag(index2, $event)">
+          <div class="classifyMore" @click="showTag(index2,$event)">
             <span>{{ '点击加载更多分类'}}</span>
           </div>
         </li>
@@ -68,11 +72,13 @@ export default Vue.extend({
   data() {
     return {
       index: 0,
+      showHeight: true,
+      isOver: 0,
       result: [],
-      brand: [],
-      isOver: true
+      brand: []
     };
   },
+
   created() {
     this.goodlist();
     this.brand1();
@@ -96,25 +102,37 @@ export default Vue.extend({
       this.brand = data1.data.data.brand;
     },
     showTag(index, ev) {
+      //
       let dom = this.$refs.elememt[index];
-      dom.classList.toggle("show");
+      // dom.classList.toggle("show");
       let span = ev.target;
       span.innerHTML = (span.isok = !span.isok)
         ? "点击收起"
         : "点击加载更多分类";
+      this.isOver = !this.isOver;
+      this.showHeight = index;
     },
-
-    goto(id) {
+    goto(keyword) {
       this.$router.push({
         //路由传参
-        path: "/goods/" + id,
-        query: { id }
+        path: "/goods/",
+        query: { keyword }
       });
     },
     searchchange() {
       this.$store.state.searching = true;
     }
   }
+  // mounted() {
+  // isHide(){
+  //     var height = this.$refs.text.maxHeight; //100
+
+  // // console.log(height);
+  // if (height < 6.2) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
 });
 </script>
 
@@ -183,7 +201,8 @@ export default Vue.extend({
   }
   .inClassifyCon {
     overflow-y: auto;
-    position: relative;
+    position: absolute;
+    top: 86px;
     .inClassifyList {
       width: 100%;
       border-bottom: solid 1rem #ddd;
@@ -214,10 +233,8 @@ export default Vue.extend({
         overflow: hidden;
         &.show {
           height: auto;
-          // height: 6rem;
           overflow: visible;
-          &.hide {
-          }
+          display: block;
         }
 
         a {
@@ -233,6 +250,9 @@ export default Vue.extend({
         font-size: 1.4rem;
         color: #ff3333;
         padding: 1.2rem;
+      }
+      &.hide {
+        display: none;
       }
     }
   }
