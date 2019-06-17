@@ -17,15 +17,9 @@ import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import Goods from './views/Goods.vue'
 
-import Loginn from './views/Loginn.vue'
-import axios from 'axios'
-Vue.prototype.$axios = axios;
-
-import iView from 'iview';
-import 'iview/dist/styles/iview.css';
 import Setting from './views/Setting.vue'
 Vue.use(Router)
-Vue.use(iView);
+
 
 
 
