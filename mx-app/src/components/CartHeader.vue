@@ -4,6 +4,7 @@
 			<p class="tit">购物车</p>
 		</header>
 </template>
+
 <style lang="scss" scoped>
     header {
     width: 100%;

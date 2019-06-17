@@ -17,6 +17,9 @@ import Totop from "@/components/Totop.vue";
     Mxhead,
     // Mxloading,
     Totop
+  },
+  created() {
+    this.$store.state.isShowMfooter = 1;
   }
 })
 export default class Home extends Vue {}

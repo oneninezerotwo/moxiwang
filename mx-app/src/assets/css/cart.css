@@ -1,9 +1,9 @@
 				/*head*/
-				
-				html,
-				body {
+
+				html, body {
 					background: #f3f3f3;
 				}
+
 				header {
 					width: 100%;
 					height: 4.0rem;
@@ -13,17 +13,17 @@
 					border-bottom: 0.1rem solid #ccc;
 					position: fixed;
 					z-index: 20;
-					top:0;
+					top: 0;
 				}
-				.shuaxin{
+
+				.shuaxin {
 					width: 10rem;
 					height: 4rem;
-				    position: absolute;
-				    left: 50%;
-				    top: 50%;
-				    margin-left: -5rem;
-				    margin-top: -2rem;
+					position: absolute;
+					left: 50%;
+					top: 50%;
 				}
+
 				header p {
 					float: left;
 					display: inline-block;
@@ -38,6 +38,7 @@
 					white-space: nowrap;
 					overflow: hidden;
 				}
+
 				header .return {
 					float: left;
 					display: inline-block;
@@ -45,33 +46,38 @@
 					height: 4.0rem;
 					text-align: center;
 				}
-				
+
 				header .return img {
 					width: 0.8rem;
 					height: 1.6rem;
 					margin: 1.2rem auto;
 				}
+
 				.marBott {
 					margin-top: 5.1rem;
 				}
+
 				/*空购物车*/
+
 				.nullCommodity {
-					width:100%;
-					margin:5% 0%;
+					width: 100%;
+					margin: 5% 0%;
 					display: none;
 				}
-				.nullCommodity img{
+
+				.nullCommodity img {
 					margin: 20% auto 0;
 					height: 10rem;
 				}
-				.nullCommodity p{
+
+				.nullCommodity p {
 					text-align: center;
 					line-height: 3.5rem;
 					font-size: 1.0rem;
 					color: #ccc;
 				}
-				
-					.hotTit {
+
+				.hotTit {
 					display: block;
 					width: 100%;
 					height: 3.5rem;
@@ -81,33 +87,35 @@
 					font-size: 1.2rem;
 					color: #333;
 				}
-				
+
 				.hotTit span {
 					border: solid 0.1rem #333;
 					padding: 3% 8%;
 				}
+
 				/*空购物车下方的商品*/
+
 				.commodity {
 					width: 94%;
 					margin: 3%;
 					color: #333;
 				}
-				
+
 				.commodity .inCommodity {
 					width: 100%;
 				}
-				
+
 				.commodity .inCommodity li {
 					width: 43%;
 					padding: 1.5% 3%;
 					display: inline-block;
 					text-align: center;
 				}
-				
+
 				.commodity .inCommodity li img {
 					margin: 0 auto;
 				}
-				
+
 				.commodity .inCommodity li .CommodityLabel {
 					border-left: solid 0.1rem #333;
 					border-right: solid 0.1rem #333;
@@ -116,7 +124,7 @@
 					font-size: 1.0rem;
 					overflow: hidden;
 				}
-				
+
 				.commodity .inCommodity li .CommodityLabelAdd {
 					/*border-right: solid 0.1rem #333;*/
 					/*padding: 0 6%;*/
@@ -124,7 +132,7 @@
 					font-size: 1.0rem;
 					overflow: hidden;
 				}
-				
+
 				.commodity .inCommodity li .CommodityName {
 					height: 2.4rem;
 					line-height: 2.4rem;
@@ -133,27 +141,28 @@
 					white-space: nowrap;
 					text-overflow: ellipsis;
 				}
-				
+
 				.commodity .inCommodity li .CommodityPrice {
 					font-size: 1.1rem;
 					color: #ff3333;
 					overflow: hidden;
 				}
-				
+
 				.commodity .inCommodity li .CommodityPrice s {
 					color: #666;
 					padding-left: 5%;
 					font-size: 1.0rem;
 				}
+
 				.shoppingCart {
 					background: white;
 					margin-top: 1.0rem;
 				}
-				
+
 				input {
 					outline: none;
 				}
-				
+
 				.shoppingCart .checkAll {
 					width: 90%;
 					padding: 0 5%;
@@ -163,8 +172,8 @@
 					color: #333;
 					border-bottom: 0.1rem solid #ccc;
 				}
-				
-				.titOne,.listOne,.titAll{
+
+				.titOne, .listOne, .titAll {
 					width: 1.6rem;
 					height: 1.6rem;
 					float: left;
@@ -174,25 +183,27 @@
 					background: url(http://weixin.moximoxi.net/MoxiWap/img/input.png) 0 0 no-repeat;
 					background-size: 100%;
 				}
-				.profrom{
+
+				.profrom {
 					float: left;
 				}
+
 				.on_check {
-					background: url(http://weixin.moximoxi.net/MoxiWap/img/input_on.png) 0 0 no-repeat;
-					background-size: 100%;
+					background: url(http://weixin.moximoxi.net/MoxiWap/img/input_on.png) 0 0 no-repeat !important;
+					background-size: 100% !important;
 				}
-				
+
 				.checkClass {
 					opacity: 0;
 					cursor: pointer;
 					filter: alpha(opacity=0);
 				}
-				
+
 				.shoppingCart .checkAll .checkAllSty {
 					/*display: inline-block;*/
 					/*float: left;*/
 				}
-				
+
 				.shoppingCart .checkAll button {
 					float: right;
 					background: transparent;
@@ -202,21 +213,21 @@
 					color: #333;
 					width: 5rem;
 				}
-				
+
 				.inShoppingCart {
 					width: 100%;
-					padding:0 1rem 0 1.5rem;
+					padding: 0 1rem 0 1.5rem;
 					overflow: hidden;
 					background: white;
 				}
-				
+
 				.inShoppingCartList {
 					padding: 3% 0% 0% 0%;
 					overflow: hidden;
-					position:relative; 
+					position: relative;
 					height: 8.5rem;
 				}
-				
+
 				.open {
 					width: 100%;
 					background: white;
@@ -224,7 +235,7 @@
 					left: 0%;
 					z-index: 11;
 				}
-				
+
 				.close {
 					width: 13%;
 					background: #FF3333;
@@ -235,31 +246,31 @@
 					text-align: center;
 					line-height: 8.0rem;
 				}
-				
+
 				.inShoppingCart .inShoppingCartCont {
 					width: 90%;
 					border-bottom: 0.1rem solid #ccc;
 					float: right;
 					padding-bottom: 5%;
 				}
-				
+
 				.none {
 					border: none!important;
 				}
-				
+
 				.inShoppingCart img {
 					width: 6rem;
-				    height: 7rem;
-				    margin-right: 3%;
-				    border: 0.1rem solid #ddd;
-				    float: left;
+					height: 7rem;
+					margin-right: 3%;
+					border: 0.1rem solid #ddd;
+					float: left;
 				}
-				
+
 				.inShoppingCart .inShoppingCartTxt {
 					width: 60%;
 					float: left;
 				}
-				
+
 				.inShoppingCart .inShoppingCartTxt p.tit {
 					width: 100%;
 					color: #666;
@@ -268,11 +279,14 @@
 					height: 3.0rem;
 					overflow: hidden;
 				}
+
 				/*编辑购物车*/
-				.inShoppingCartTxt .edit{
+
+				.inShoppingCartTxt .edit {
 					overflow: hidden;
 				}
-				.inShoppingCartTxt .edit button{
+
+				.inShoppingCartTxt .edit button {
 					width: 3rem;
 					height: 3rem;
 					text-align: center;
@@ -282,7 +296,8 @@
 					border: 1px solid gray;
 					background: white;
 				}
-				.inShoppingCartTxt .edit input{
+
+				.inShoppingCartTxt .edit input {
 					width: 5rem;
 					height: 2.85rem;
 					text-align: center;
@@ -291,6 +306,7 @@
 					margin-right: 0.2rem;
 					border: 1px solid gray;
 				}
+
 				.inShoppingCart .inShoppingCartTxt p span.free {
 					color: #333;
 					padding: 1% 3%;
@@ -298,32 +314,36 @@
 					margin: 1% 0;
 					font-size: 1.1rem;
 				}
-				
+
 				.inShoppingCart .inShoppingCartTxt p span.number {
 					color: #333;
 					padding: 1% 3%;
 					float: right;
 				}
-				
+
 				.inShoppingCart .inShoppingCartTxt span.price {
 					font-size: 1.1rem;
 					color: #ff3333;
 					overflow: hidden;
 					padding-bottom: 3%;
 				}
-				
+
 				.inShoppingCart .inShoppingCartTxt span.price s {
 					color: #666;
 					padding-left: 5%;
 					font-size: 1.0rem;
 				}
+
 				/*.main .inShoppingCart:nth-of-type(1),.main .shoppingCart:nth-of-type(1)*/
-				.main{
+
+				.main {
 					/*background: white;*/
 				}
-				.parent1,.parent2{
+
+				.parent1, .parent2 {
 					display: none;
 				}
+
 				.total {
 					width: 100%;
 					padding: 3% 5%;
@@ -335,34 +355,34 @@
 					opacity: 0.8;
 					background: #f3f3f3;
 				}
-				
+
 				.total .totalCheckAll {
 					width: 20%;
 					float: left;
 					font-size: 1.2rem;
 				}
-				
+
 				.total .totalCheckAll span:nth-child(2) {
 					margin: 0.7rem 0.7rem 0 0;
 					display: inline-block;
 				}
-				
+
 				.total .allPrice {
 					width: 50%;
 					float: left;
 				}
-				
+
 				.total .allPrice p {
 					width: 70%;
 					text-align: right;
 					font-size: 1.1rem;
 				}
-				
+
 				.total .allPrice p:nth-child(1) span {
 					font-size: 2rem;
 					color: #333;
 				}
-				
+
 				.total button {
 					width: 30%;
 					height: 3.5rem;
@@ -372,7 +392,7 @@
 					font-family: "微软雅黑";
 					float: right;
 				}
-				
+
 				.total .inTotalList {
 					width: 100%;
 					border-bottom: solid 0.1rem #999;
@@ -380,16 +400,18 @@
 					padding: 3% 0;
 					font-weight: bold;
 				}
-				
+
 				.total h2 {
 					font-size: 1.2rem;
 					color: #666;
 					font-weight: normal;
 					font-weight: bold;
 				}
+
 				/*.total .totalList{
 					display: none;
 				}*/
+
 				.total .inTotalList span {
 					color: #333;
 					font-size: 1.2rem;
@@ -400,30 +422,30 @@
 					margin-right: 8%;
 					font-weight: bold;
 				}
-				
+
 				.total .inTotalList .inTotalListPrice {
 					width: 50%;
 					float: left;
 				}
-				
+
 				.total .inTotalList .inTotalListPrice p {
 					font-size: 1.0rem;
 					line-height: 1.8rem;
 					font-weight: bold;
 				}
-				
+
 				.total .inTotalList .inTotalListPrice p:nth-child(2) strong {
 					font-size: 1.2rem;
 				}
-				
+
 				.total .inTotalList .inTotalListPrice p:nth-child(3) {
 					color: #333;
 				}
-				
+
 				.total .inTotalList .inTotalListPrice p strong {
 					color: #ff3333;
 				}
-				
+
 				.total .inTotalList a {
 					color: #333;
 					font-size: 1.2rem;
@@ -436,24 +458,29 @@
 					text-align: center;
 					display: inline-block;
 				}
+
 				/*蒙层*/
-				.mainlayoutshow{
+
+				.mainlayoutshow {
 					position: fixed;
-					top:0;
+					top: 0;
 					height: 100%;
 					width: 100%;
 					background: transparent;
 					display: block;
 					z-index: 20;
 				}
-				.mainlayouthide{
+
+				.mainlayouthide {
 					display: none;
 				}
+
 				/*footer开始*/
+
 				.marTop {
 					margin-bottom: 12.0rem;
 				}
-				
+
 				footer {
 					width: 100%;
 					padding: 0.5rem 0;
@@ -461,37 +488,43 @@
 					bottom: 0;
 					z-index: 100;
 				}
-				
-				.inFooter {
-				width: 90%;
-				padding: 0% 5%;
-				display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
-			    display: -moz-box; /* Firefox 17- */
-			    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
-			    display: -moz-flex; /* Firefox 18+ */
-			    display: -ms-flexbox; /* IE 10 */
-			    display: flex;
 
-				position: fixed;
-				bottom: 0;
-				background-color: white;
-				border-top: solid 0.1rem #d1d1d1;
-			}
-			footer .inFooter p {
-				 box-flex:1.0; 
-				 -webkit-box-flex:1.0;
-				 flex: auto;
-				padding: 1% 0 1% 0;
-			}
-			
-			footer .inFooter p img {
-				height: 2.5rem;
-				margin: 0 auto;
-			}
-			.indeximg{
-				width:2.8rem;
-			}
-				
+				.inFooter {
+					width: 90%;
+					padding: 0% 5%;
+					display: -webkit-box;
+					/* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+					display: -moz-box;
+					/* Firefox 17- */
+					display: -webkit-flex;
+					/* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+					display: -moz-flex;
+					/* Firefox 18+ */
+					display: -ms-flexbox;
+					/* IE 10 */
+					display: flex;
+					position: fixed;
+					bottom: 0;
+					background-color: white;
+					border-top: solid 0.1rem #d1d1d1;
+				}
+
+				footer .inFooter p {
+					box-flex: 1.0;
+					-webkit-box-flex: 1.0;
+					flex: auto;
+					padding: 1% 0 1% 0;
+				}
+
+				footer .inFooter p img {
+					height: 2.5rem;
+					margin: 0 auto;
+				}
+
+				.indeximg {
+					width: 2.8rem;
+				}
+
 				footer .inFooter p span {
 					width: 100%;
 					display: block;
@@ -500,42 +533,47 @@
 					color: #666;
 					line-height: 1.8rem;
 				}
-				
+
 				footer .inFooter p.current span {
 					color: #FF3333;
 				}
-				.shoppingcart{
+
+				.shoppingcart {
 					position: relative;
 				}
-				.shoppingcart label{
+
+				.shoppingcart label {
 					position: absolute;
 					width: 1.6rem;
 					height: 1.6rem;
 					border-radius: 50%;
 					background: #FF0000;
-					left:3rem;
-					bottom:2rem;
+					left: 3rem;
+					bottom: 2rem;
 					line-height: 1.6rem;
 					text-align: center;
 					font-size: 1.2rem;
 					color: white;
 				}
+
 				/*返回顶部*/
-				#topcontrol{
-					position: fixed; 
-					bottom: 7rem; 
-					right: 1rem; 
-					opacity: 1; 
+
+				#topcontrol {
+					position: fixed;
+					bottom: 7rem;
+					right: 1rem;
+					opacity: 1;
 					cursor: pointer;
-					width:4rem;
+					width: 4rem;
 					height: 4rem;
 					z-index: 1000;
 					display: none;
 				}
-				.info{
+
+				.info {
 					height: 4rem;
-				    text-align: center;
-				    line-height: 4rem;
-				    font-size: 1.2rem;
-				    color: #666;
+					text-align: center;
+					line-height: 4rem;
+					font-size: 1.2rem;
+					color: #666;
 				}
