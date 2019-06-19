@@ -19,7 +19,7 @@ export default {
     position: fixed;
     top: 50%;
     left: 60%;
-    transform: translateX(-50%)
+    transform: translateX(-75%)
   }
 /* .shuaxin {
   position: absolute;

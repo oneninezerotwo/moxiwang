@@ -31,7 +31,7 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
-      redirect: '/recommend',
+      // redirect: '/recommend',
       children: [
         { path: 'recommend', component: recommend, name: 'recommend' },
         { path: 'cgoods', component: cgoods, name: 'cgoods' },

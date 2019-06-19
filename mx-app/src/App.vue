@@ -3,7 +3,7 @@
     <loading/>
     <Search/>
     <Footer/>
-    <router-view/>
+    <keep-alive include="Home"><router-view/></keep-alive>
   </div>
 </template>
 <script lang="ts">

@@ -4,7 +4,7 @@
       <ul class="swiper-wrapper nav-header">
         <!-- <li class="swiper-slide tabNavActive swiper-slide-active" style="margin-right: 20px;" :class="{active:state}" v-on:click="firstchange()">推荐</li> -->
         <li v-for="(i,index) in navlist" :key="index" id="i.id" class="swiper-slide swiper-slide-next" style="margin-right: 20px;">
-          <a href="###" v-text="i.actName" v-on:click="change(i,index)" :class="{active:num===index}"></a>
+          <a href="###" v-text="i.actName" v-on:click="change(i,index)" :class="{active:i.name===$route.name}"></a>
         </li>
         <!-- <li id="246" class="swiper-slide" style="margin-right: 20px;">
                     <a href="###">中国现货</a>
@@ -27,12 +27,16 @@ export default {
   data() {
     return {
       navlist: [],
-      num: 0
+      current: 'recommend'
     };
   },
   created() {
     this.NavList(() => {});
   },
+  mounted(){
+    console.log('r',this.$route);
+  },
+  
   name: "Xnav",
   methods: {
     async NavList() {
@@ -47,7 +51,6 @@ export default {
       this.$store.state.loading -= 1;
     },
     change(i, index) {
-      this.num = index;
       this.$router.push({ path: i.name });
       console.log(i.name);
     }
